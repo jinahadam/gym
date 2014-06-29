@@ -1,0 +1,26 @@
+
+    <!-- main content goes here -->
+    <table>
+      <thead>
+        <tr>
+          <th width="200">Muscle</th>
+          <th width="150">Date</th>
+          <th width="150">Total Weight</th>
+          <th width="150">Unit</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <% @logs.each do |item| %>
+        <tr>
+        <td><%= item.muscle_group_name %></td>
+        <td><%= item.date %></td>
+        <td><%= item.total_weight %></td>
+        <td><%= item.unit %></td>
+      </tr>
+    <% end %>
+
+      </tbody>
+    </table>
+
+  

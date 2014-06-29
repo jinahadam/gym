@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title>Gym</title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -12,8 +12,42 @@
   </head>
 
   <body>
+<div class="off-canvas-wrap" data-offcanvas>
+<div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
 
-    <%= yield %>
+      <section class="middle tab-bar-section">
+        <h1 class="title">Gym Stuff</h1>
+      </section>
+
+      
+    </nav>
+
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Actions</label></li>
+        <li><a href="/">Summary</a></li>
+        <li><a href="/log_summary/new">New</a></li>
+        <li><a href="/log_summary">List All</a></li>
+      </ul>
+    </aside>
+
+    <section class="main-section">
+      <!-- content goes here -->
+  <%= yield %>
     <%= javascript_include_tag "application" %>
-  </body>
+ 
+  <!-- close the off-canvas menu -->
+     </section>
+
+  <a class="exit-off-canvas"></a>
+
+  </div>
+</div>
+
+
+     </body>
 </html>

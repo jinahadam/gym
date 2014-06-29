@@ -1,0 +1,34 @@
+<%= form_for @log_summary, url: '/log_summary' do |f| %>
+  <br /> <br />
+  <div class="large-12 columns">
+    <%= f.select :muscle_group_id, options_from_collection_for_select(@muscle_groups, "id", "name") %>
+  </div>
+
+<div class="large-12 columns">
+  <label>Total Weight
+    <%= f.text_field :total_weight, placeholder:'Total Weight' %> <br />
+  </label>
+</div>
+
+<div class="large-12 columns">
+  <label>Date
+    <%= f.text_field :date, placeholder:'2014-06-21' %> <br />
+  </label>
+</div>
+
+<div class="large-12 columns">
+  <label>Unit
+    <%= f.text_field :unit, placeholder:'kg' %> <br />
+  </label>
+</div>
+
+
+
+<div class="large-12 columns">
+
+  <%= f.submit nil, :class => "button [secondary success alert]", :value => "Create" %>
+
+
+</div>
+<% end %>
+
