@@ -19,7 +19,12 @@ class MuscleGroupLog < ActiveRecord::Base
         result[name] = (Date.today - dates.max).to_i
       end
     end
-    result.sort_by {|k,v| v}.reverse
+    puts Hirb::Helpers::AutoTable.render(result.sort_by {|k,v| v}.reverse)
+  end
+
+  def self.create_log(d, group, weight, u)
+    g = MuscleGroup.where(name:group).first.id
+    MuscleGroupLog.create(date:d, muscle_group_id:g, total_weight:weight, unit:u)
   end
 
 
